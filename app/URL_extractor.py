@@ -5,6 +5,11 @@ import datetime
 import socket
 import re
 
+def extract_urls_from_text(message):
+    """Extract URLs from text message using regex"""
+    url_pattern = r'http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\\(\\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+'
+    return re.findall(url_pattern, message)
+
 def extract_features(url):
     """Extract features from URL for phishing detection"""
     try:
