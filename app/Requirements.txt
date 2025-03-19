@@ -6,3 +6,4 @@ import socket
 import re
 import joblib
 #All imports are necessary u can add in additional files
+pip install XGBoost
