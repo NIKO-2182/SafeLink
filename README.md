@@ -1,3 +1,5 @@
+
+
 ---
 
 ```markdown
@@ -5,52 +7,38 @@
 
 ## 📋 Overview
 
-SafeLink Analyzer is an intelligent phishing detection system built on XGBoost. It identifies malicious URLs with high precision by analyzing lexical, structural, and statistical features. Designed for modern cybersecurity applications, it provides fast, explainable predictions and supports both API and CLI interfaces for flexible integration.
+SafeLink Analyzer is a lightweight, high-performance phishing detection system built using XGBoost. It analyzes structural and lexical features of URLs to accurately classify potential threats. Designed for cybersecurity applications, the tool supports both API and CLI interfaces, making it ideal for integration into security workflows, personal URL auditing, and enterprise-grade protection pipelines.
 
 ## ✨ Features
 
-- **High Accuracy Classification**  
-  Flags phishing URLs using a well-tuned XGBoost model trained on curated datasets.
-
-- **Fast Prediction Pipeline**  
-  Lightweight design ensures quick inference for real-time security systems.
-
-- **Explainable Outputs**  
-  Optional SHAP visualizations reveal feature importance and decision logic.
-
-- **Flexible Input Modes**  
-  Scan single or batch URLs via command-line or REST API.
-
-- **Modular Design**  
-  Easily extend or customize feature engineering and model parameters.
+- **Fast Phishing Detection** — Leverages XGBoost for real-time URL classification  
+- **High Precision & Recall** — Tuned to minimize false positives while maximizing threat detection  
+- **Explainable Results** — Optional SHAP visualizations to interpret model decisions  
+- **Modular CLI & API Access** — Scan URLs using command line or RESTful API for seamless integration  
+- **Extensible Feature Engineering** — Customize input features based on domain-specific indicators
 
 ## 🏗️ Architecture
 
-SafeLink Analyzer is powered by a structured pipeline:
-
-- **Feature Extraction**  
-  Converts raw URLs into feature-rich vectors using domain-specific heuristics.
-
-- **Model Training (XGBoost)**  
-  Optimized gradient boosting for high recall on phishing classifications.
-
-- **Prediction Engine**  
-  Accepts real-time or bulk inputs, returning binary classifications and confidence scores.
+- **Feature Extraction** — Converts raw URLs into structured vectors with lexical and heuristic features  
+- **XGBoost Model** — Trained for binary classification of phishing vs benign URLs  
+- **Prediction Pipeline** — Returns classification label and probability score for individual or batch inputs  
+- **Flask API** — Serves predictions over HTTP POST for real-time scanning  
+- **Visualization Module (Optional)** — Explains decisions using SHAP plots and feature importance graphs
 
 ## 🧰 Tech Stack
 
-- `XGBoost` — High-performance gradient boosting classifier  
-- `Scikit-learn` — Preprocessing, metrics, and model utilities  
-- `Pandas` — Data transformation and batch processing  
-- `Flask` — REST API for real-time classification  
-- `SHAP` / `Matplotlib` — Optional explainability and visualization tools
+- `XGBoost` — Machine learning engine for binary URL classification  
+- `Scikit-learn` — Tools for preprocessing, evaluation, and data splitting  
+- `Pandas` — Dataframe manipulation for feature generation and batch processing  
+- `Flask` — REST API for live prediction serving  
+- `SHAP`, `Matplotlib` — Interpretability and visualization of model outputs
 
 ## 🚀 Getting Started
 
 ### Prerequisites
 
-- Python 3.9+  
-- pip  
+- Python 3.9 or higher  
+- pip (Python package manager)  
 - 4GB+ RAM recommended
 
 ### Installation
@@ -65,40 +53,47 @@ pip install -r requirements.txt
 
 ## 📱 Usage
 
-- **Single URL Scan**
+### Single URL Classification
 
 ```bash
-python classify_url.py --url "http://suspicious-redirect.biz/login"
+python classify_url.py --url "http://login.phishing-example.com"
 ```
 
-- **Batch URL Classification**
+### Batch URL Classification
 
 ```bash
 python classify_batch.py --input data/urls.csv --output results.csv
 ```
 
-- **Run REST API Server**
+### Run as REST API
 
 ```bash
 python app.py
 ```
 
-Send a POST request to `/predict` with:
+Send a POST request to:
+
+```
+http://localhost:5000/predict
+```
+
+With payload:
 
 ```json
-{ "url": "http://malicious-example.org/phish" }
+{ "url": "http://suspicious-site.biz/login" }
 ```
 
 ## 🛠️ Customization
 
-- Modify feature logic in `features.py`  
-- Retrain with new datasets via:
+- Modify or extend features in `features.py`  
+- Retrain model using:
 
 ```bash
-python train_model.py --data data/custom_dataset.csv
+python train_model.py --data data/new_dataset.csv
 ```
 
-- Adjust model settings in `config/model_params.json`
+- Adjust hyperparameters via `config/model_params.json`  
+- Add new visualizations using `explain_model.py`
 
 ## 📜 License
 
@@ -106,6 +101,6 @@ Licensed under the MIT License. See the [LICENSE](LICENSE) file for full terms.
 
 ## 🙌 Acknowledgments
 
-Built using open-source tools like XGBoost, Flask, and SHAP. Special thanks to the cybersecurity research community for sharing datasets and insights that helped shape the phishing detection landscape.
+Built with open-source contributions from the Python ML and cybersecurity communities. Special thanks to the researchers who made phishing datasets publicly available and the developers behind XGBoost, Flask, and SHAP.
 
 ---
