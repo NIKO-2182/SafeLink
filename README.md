@@ -1,11 +1,11 @@
 ---
 
-## 🛡️ SafeLink Analyzer
+##  SafeLink Analyzer
 
 ### 📋 Overview  
 SafeLink Analyzer is a lightweight, high-precision phishing detection tool built using XGBoost. It analyzes lexical and structural patterns in URLs to identify malicious links with strong performance and fast inference speeds. Tailored for cybersecurity workflows, it supports both CLI and API usage for seamless integration into enterprise systems and personal security audits.
 
-### ✨ Features
+###  Features
 
 - **URL-Based Threat Detection**  
   Identifies phishing attempts by analyzing domain structure, token patterns, and entropy measures.
@@ -22,7 +22,7 @@ SafeLink Analyzer is a lightweight, high-precision phishing detection tool built
 - **Modular Design**  
   Customize feature logic, model parameters, and input pipelines easily.
 
-### 🏗️ Architecture  
+###  Architecture  
 SafeLink Analyzer is built on a robust detection pipeline composed of:
 
 - **Feature Extraction** — Transforms raw URLs into numerical vectors using lexical, structural, and statistical heuristics  
@@ -31,7 +31,7 @@ SafeLink Analyzer is built on a robust detection pipeline composed of:
 - **Flask Interface** — Lightweight API for deployment and integration  
 - **Explainability Layer (Optional)** — SHAP visualizations to interpret model decisions
 
-### 🧰 Tech Stack
+###  Tech Stack
 
 - **XGBoost** — Core ML model for phishing classification  
 - **Scikit-learn** — Utilities for preprocessing and evaluation  
@@ -39,7 +39,7 @@ SafeLink Analyzer is built on a robust detection pipeline composed of:
 - **Flask** — REST API for real-time classification  
 - **SHAP / Matplotlib** — Interpretability and visualization of model output
 
-### 🚀 Getting Started
+###  Getting Started
 
 #### Prerequisites
 
@@ -57,7 +57,7 @@ source venv/bin/activate   # On Windows: venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-### 📱 Usage
+###  Usage
 
 - **Classify Single URL**  
   _Example_:  
@@ -81,7 +81,7 @@ pip install -r requirements.txt
   { "url": "http://malicious-site.biz/verify" }
   ```
 
-### 🛠️ Customization
+###  Customization
 
 - **Tune Model Parameters**  
   Modify `config/model_params.json` for different classification behavior
@@ -98,10 +98,10 @@ pip install -r requirements.txt
 - **Enable Explainability**  
   Use SHAP via `explain_model.py` for visual breakdown of predictions
 
-### 📜 License  
+###  License  
 Licensed under the MIT License. See the LICENSE file for details.
 
-### 🙌 Acknowledgments  
+###  Acknowledgments  
 Built using **XGBoost**, **Flask**, and supporting Python ML libraries. Special thanks to the open-source cybersecurity community and dataset providers who contributed to phishing defense research.
 
 ---
