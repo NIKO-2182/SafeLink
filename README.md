@@ -2,7 +2,7 @@
 
 ##  SafeLink Analyzer
 
-### 📋 Overview  
+###  Overview  
 SafeLink Analyzer is a lightweight, high-precision phishing detection tool built using XGBoost. It analyzes lexical and structural patterns in URLs to identify malicious links with strong performance and fast inference speeds. Tailored for cybersecurity workflows, it supports both CLI and API usage for seamless integration into enterprise systems and personal security audits.
 
 ###  Features
