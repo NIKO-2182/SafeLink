@@ -1,9 +1,11 @@
 services:
   backend:
-    build: ./app
+    build:
+      context: .
+      dockerfile: Dockerfile
     container_name: safelink_backend
     expose:
-      - "5000"
+      - "6007"
     restart: always
 
   frontend:

@@ -3,3 +3,6 @@
 xgboost
 flask 
 python-whois   
+joblib
+numpy
+pandas
