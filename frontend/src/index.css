@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  }
+
+  :root.dark {
+    color-scheme: dark;
+  }
+
+  body {
+    background-color: #e6ecf5;
+    color: #1e293b;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  .dark body,
+  :root.dark {
+    background-color: #0d0f14;
+    color: #f1f5f9;
+  }
+
+  /* Accessible focus ring across all neomorphic elements */
+  *:focus-visible {
+    outline: 2px solid #f59e0b !important;
+    outline-offset: 3px !important;
+  }
+}
+
+/* Custom Neomorphic Utility Classes for seamless light/dark handling */
+@layer utilities {
+  .nm-flat {
+    @apply shadow-nm-flat dark:shadow-nm-dark-flat bg-nm-light-surface dark:bg-nm-dark-surface;
+  }
+
+  .nm-raised {
+    @apply shadow-nm-raised dark:shadow-nm-dark-raised bg-nm-light-surface dark:bg-nm-dark-surface;
+  }
+
+  .nm-raised-sm {
+    @apply shadow-nm-raised-sm dark:shadow-nm-dark-raised-sm bg-nm-light-surface dark:bg-nm-dark-surface;
+  }
+
+  .nm-raised-lg {
+    @apply shadow-nm-raised-lg dark:shadow-nm-dark-raised-lg bg-nm-light-surface dark:bg-nm-dark-surface;
+  }
+
+  .nm-inset {
+    @apply shadow-nm-inset dark:shadow-nm-dark-inset bg-nm-light-surface dark:bg-nm-dark-surface;
+  }
+
+  .nm-inset-sm {
+    @apply shadow-nm-inset-sm dark:shadow-nm-dark-inset-sm bg-nm-light-surface dark:bg-nm-dark-surface;
+  }
+
+  /* Light mode backgrounds */
+  .bg-nm-light-bg {
+    background-color: theme('colors.nm.light.bg');
+  }
+  .bg-nm-dark-bg {
+    background-color: theme('colors.nm.dark.bg');
+  }
+  .text-nm-light-text {
+    color: theme('colors.nm.light.text');
+  }
+  .text-nm-dark-text {
+    color: theme('colors.nm.dark.text');
+  }
+}

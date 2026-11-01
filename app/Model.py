@@ -1,6 +1,6 @@
 from flask import Blueprint, jsonify, request
-from Prediction_model import classify_url
-from URL_extractor import extract_features
+from .Prediction_model import classify_url
+from .URL_extractor import extract_features
 
 model = Blueprint("PhiModel", __name__, url_prefix="/api")
 

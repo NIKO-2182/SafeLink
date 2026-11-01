@@ -1,10 +1,14 @@
+import os
 import joblib
 
 def classify_url(features):
 
     try:
         # Load model
-        model = joblib.load('E:/Codes/ML/Finance/Fmodel/phishing_model.joblib')
+        model_path = './phishing_model.joblib'
+        if not os.path.exists(model_path):
+            model_path = os.path.join(os.path.dirname(__file__), 'phishing_model.joblib')
+        model = joblib.load(model_path)
         
         # Make prediction
         prediction = model.predict(features)[0]
