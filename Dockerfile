@@ -14,4 +14,4 @@ COPY . .
 
 EXPOSE 6007
 
-CMD [ "python", "Prediciton_model.py" ]
+CMD [ "python", "main.py" ]
